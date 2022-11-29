@@ -94,7 +94,7 @@ $hotels = [
             <h1 class="my-3">Hotels</h1>
             <div class="row gy-3 row-cols-3">
                 <?php foreach ($hotels as $hotel) : ?>
-                    <?php if (isset($park) && is_numeric(intval($vote))) { ?>
+                    <?php if (isset($park) && isset($vote)) { ?>
                         <?php if ($park === $hotel['parking'] && $hotel['vote'] >= intval($vote)) : ?>
                             <div class="col">
                                 <div class="card ms_card">
@@ -142,7 +142,7 @@ $hotels = [
                                 </div>
                             </div>
                         <?php endif ?>
-                    <?php } elseif (is_numeric(intval($vote))) { ?>
+                    <?php } elseif (isset($vote)) { ?>
                         <?php if ($hotel['vote'] >= intval($vote)) : ?>
                             <div class="col">
                                 <div class="card ms_card">
